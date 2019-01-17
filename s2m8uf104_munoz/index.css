@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e9eaed;
+}
+
+#barra {
+  height: 43px;
+  background-color: #5066ae;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 43;
+}
+
+#contingut {
+  width: 852px;
+  height: 1819px;
+  margin: auto;
+}
+
+#contingut #cap {
+  width: 852px;
+  height: 357px;
+  margin: auto;
+  background-image: url(img/vikings.jpg);
+  background-repeat: no-repeat;
+  background-color: white;
+  border: 1px solid color: #DDD;
+  border-radius: 3px;
+}
+
+#contingut #cap img {
+  position: relative;
+  top: 170px;
+  left:21px;
+  border-radius: 50%;
+  border: solid white;
+  box-shadow: 2px 2px 2px #666666;
+}
+
+#contingut #cap h2 {
+  color: white;
+  position: relative;
+  top: 50px;
+  left: 230px;
+}
+
+#contingut #menu {
+  height: 43px;
+  background-color: grey;
+  width: 492px;
+  float: right;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 66px;
+}
+
+li {
+  float: left;
+  margin: 0 1px 0 0;
+  list-style-type: none;
+  display: block;
+  height: 43px;
+  padding: 0 15px;
+  background-color: white;
+  line-height: 43px;
+}
+
+#ppal {
+}
+
+.esquerra {
+  height: 200px;
+  width: 322px;
+  background-color: white;
+  border-radius: 3px;
+  border: solid 1px color: #DDD;
+  margin-top: 12px;
+}
+
+#fotos {
+  background-color: red;
+}
