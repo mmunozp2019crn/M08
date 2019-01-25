@@ -1,0 +1,171 @@
+body {
+  background-color: #222;
+  width: auto;
+  font-family: helvetica, sans-serif;
+  color: white;
+}
+
+#menu {
+  background-image: url(imatges/logo.png);
+  background-repeat: no-repeat;
+  background-position: 10px 0px;
+  height: 50px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 600;
+}
+
+#barra {
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 600;
+}
+
+#barra li {
+  list-style-type: none;
+  text-decoration: none;
+  display: inline;
+  width: 50px;
+  line-height: 30px;
+  margin-left: 20px;
+}
+
+#contenedor {
+  padding-top: 40px;
+}
+
+.pelis {
+  width: 175px;
+  height: 300px;;
+  border-radius: 5px;
+  float: left;
+  margin: 20px;
+  line-height: 500px;
+}
+
+.pelis:hover {
+  background-color: black;
+  opacity: 0.5;
+}
+
+.vistos {
+  width: 175px;
+  height: 300px;;
+  border-radius: 5px;
+  float: left;
+  margin: 20px;
+  line-height: 500px;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%)
+  filter: grayscale(100%);
+}
+
+.vistos:hover {
+  background-color: black;
+  opacity: 0.5;
+}
+
+.pendents {
+  width: 175px;
+  height: 300px;;
+  border-radius: 5px;
+  float: left;
+  margin: 20px;
+  line-height: 500px;
+  background-color: red;
+}
+
+.pendents:hover {
+  background-color: black;
+  opacity: 0.5;
+}
+
+
+
+
+#n1 {
+  background-image: url(imatges/1982Koyaanisqatsi.jpg);
+  background-repeat: no-repeat;
+}
+
+#n2 {
+  background-image: url(imatges/2004YTuQueSabes.jpg);
+  background-repeat: no-repeat;
+}
+
+#n3 {
+  background-image: url(imatges/2005Earthlings.jpg);
+  background-repeat: no-repeat;
+}
+
+#n4 {
+  background-image: url(imatges/2007Helvetica.jpg);
+  background-repeat: no-repeat;
+}
+
+#n5 {
+  background-image: url(imatges/2007Sicko.jpg);
+  background-repeat: no-repeat;
+}
+
+#n6 {
+  background-image: url(imatges/2008Zeitgeist2.jpg);
+  background-repeat: no-repeat;
+}
+
+#n7 {
+  background-image: url(imatges/2009ArtAndCopy.jpg);
+  background-repeat: no-repeat;
+}
+
+#n8 {
+  background-image: url(imatges/2009Home.jpg);
+  background-repeat: no-repeat;
+}
+
+#n9 {
+  background-image: url(imatges/2009RipARemixManifesto.jpg);
+  background-repeat: no-repeat;
+}
+
+#n10 {
+  background-image: url(imatges/2010ComprarTirarComprar.jpg);
+  background-repeat: no-repeat;
+}
+
+#n11 {
+  background-image: url(imatges/2010InsideJob.jpg);
+  background-repeat: no-repeat;
+}
+
+#n12 {
+  background-image: url(imatges/2011LaDoctrinaDeShock.jpg);
+  background-repeat: no-repeat;
+}
+
+#n13 {
+  background-image: url(imatges/2012SearchingForSugarMan.jpg);
+  background-repeat: no-repeat;
+}
+
+#n14 {
+  background-image: url(imatges/2012TheActOfKilling.jpg);
+  background-repeat: no-repeat;
+}
+
+#n15 {
+  background-image: url(imatges/2013ElEspirituDel45.jpg);
+  background-repeat: no-repeat;
+}
+
+#seccio {
+  clear: both;
+}
