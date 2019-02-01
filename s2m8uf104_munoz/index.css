@@ -13,12 +13,13 @@ body {
   left: 0;
   right: 0;
   height: 43;
+  z-index: 1000;
 }
 
 #contingut {
   width: 852px;
-  height: 1819px;
   margin: auto;
+  overflow: hidden;
 }
 
 #contingut #cap {
@@ -59,10 +60,9 @@ body {
   top: 68px;
 }
 
-li {
+#menu li {
   float: left;
   margin: 0 1px 0 0;
-  list-style-type: none;
   display: block;
   height: 43px;
   padding: 0 15px;
@@ -71,25 +71,20 @@ li {
 }
 
 #ppal {
+  overflow: hidden;
 }
 
 #seccions {
   float: left;
-  width: 322px;
+  width: 298px;
   overflow: hidden;
 }
 
 .esquerra {
-  height: 200px;
-  width: 322px;
-}
 
-#fotos {
-  background-color: red;
 }
 
 .dreta {
-  height: 150px;
   width: 515px;
   float: right;
   clear: right;
@@ -100,8 +95,264 @@ li {
   border-radius: 3px;
   border: solid 1px color: #DDD;
   margin-top: 12px;
+  overflow: hidden;
+  font-size: 12px;
+  padding: 12px;
 }
 
-#presentacio {
+#presentacio, #amistats, #fotos {
 
+}
+
+#seccions h3 {
+  text-indent: 30px;
+  height: 21px;
+  background-image: url(img/lateral.png);
+  background-repeat: no-repeat;
+  background-position: 0 -24px;
+  padding-top: 3px;
+}
+
+#presentacio h3 {
+  background-position: 0px 0px;1
+}
+
+#presentacio p {
+  background-position: 0px 0px;
+  border-bottom: solid 1px #DDD;
+  box-shadow: 0 1px 0 #DDD;
+}
+
+#presentacio .estudis {
+  list-style-image: url(icn/estudis.png);
+}
+
+.domicili {
+  list-style-image: url(icn/domicili.png);
+}
+
+.feina {
+  list-style-image: url(icn/feina.png);
+}
+
+.naixement {
+  list-style-image: url(icn/esdeveniments.png);
+}
+
+#surprise h3 {
+  background-position: 0px -72px;
+}
+
+#amistats h3 {
+  background-position: 0px -48px;
+}
+
+#amistats ul {
+  padding: 0;
+}
+
+#amistats li {
+  width: 86px;
+  height: 86px;
+  margin: 2px;
+  float: left;
+  list-style-type: none;
+  line-height: 150px;
+  text-align: center;
+}
+
+#amistats ul {
+  list-style-type: none;
+}
+
+#amistats a:link {
+  display: block;
+  text-decoration: none;
+  color: grey;
+}
+
+#amistats #SP {
+  background-image: url(https://sperez2019crn.github.io/M08/s2m8uf104_sperez/img/fotoperfil.jpg);
+  background-size: cover;
+}
+
+#amistats #AG {
+  background-image: url(https://agarcia2019crn.github.io/M08/s2m8uf104_garciaa/img/perfil.jpg);
+  background-size: cover;
+}
+
+#amistats #SG {
+  background-image: url(https://sgarzon2019crn.github.io/M08/s2m8uf104_facebook/img/perfil.jpg);
+  background-size: cover;
+}
+
+#amistats #OL {
+  background-image: url(https://olopez2019crn.github.io/M08/s2m8uf0104_lopez/img/homero.png);
+  background-size: cover;
+}
+
+#amistats #YR {
+  background-image: url(https://yromero2019crn.github.io/M08/UF1/s2m8uf104_facebook/img/perfil1.jpg);
+  background-size: cover;
+}
+
+#amistats #OP {
+  background-image: url(https://oparicio2019crn.github.io/M08/UF1/s2m8uf104_oparicio/img/perfil.png);
+  background-size: cover;
+}
+
+#amistats #SF {
+  background-image: url(https://sfernandez2019crn.github.io/M08/s2m8uf104_fernandez/img/gos.png);
+  background-size: cover;
+}
+
+#amistats #IP {
+  background-image: url(https://iprados2019crn.github.io/M08/s2m8uf104_iprados/img/fotoperfil.jpg);
+  background-size: cover;
+}
+
+#amistats #VH {
+  background-image: url(https://vherrero2019crn.github.io/M08/s2m8uf104facebook/img/perfil.png);
+  background-size: cover;
+}
+
+
+#fotos h3 {
+  background-position: 0px -24px;
+}
+
+#fotos ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+#fotos li {
+  width: 86px;
+  height: 86px;
+  margin: 2px;
+  float: left;
+  list-style-type: none;
+  line-height: 150px;
+  text-align: center;
+}
+
+#fotos .F1 {
+  background-image: url(img/F1.jpg);
+  background-size: cover;
+}
+
+#fotos .F2 {
+  background-image: url(img/F3.jpg);
+  background-size: cover;
+}
+
+#fotos .F3 {
+  background-image: url(img/F2.jpg);
+  background-size: cover;
+}
+
+#post1 li {
+  list-style-type: none;
+  text-decoration: none;
+  display: inline;
+  background-color: #f5f5f7;
+  height: 38px;
+  padding: 12px;
+  margin: 5px;
+  border-radius: 10px;
+  position: relative;
+  top: 12px;
+}
+
+#post1 li:hover {
+  opacity: 0.5;
+}
+
+#post1 ul {
+  height: 38px;
+  padding: 0;
+  margin: 0;
+}
+
+#pensament {
+  display: block;
+  clear: left;
+  position: relative;
+  left: -12px;
+  height: 71px;
+  width: 516px;
+  font-size: 1.5em;
+  margin-left: 65px;
+  border: 0px;
+}
+
+#estat_fotovideo {
+ background-image: url(icn/foto.png);
+ background-repeat: no-repeat;
+ background-position: 6px 8px;
+}
+
+
+#estat_etiquetar {
+ background-image: url(icn/etiquetar.png);
+ background-repeat: no-repeat;
+ background-position: 6px 8px;
+}
+
+#estat_sentiment {
+ background-image: url(icn/sonrisa.png);
+ background-repeat: no-repeat;
+ background-position: 6px 8px;
+}
+
+#botonera_estat li {
+ padding-left: 30px;
+}
+
+#botonera_estat li:hover{
+ opacity: 0.5
+}
+
+.entrada {
+
+}
+
+.entrada h4 {
+  height: 40px;
+}
+
+.entrada h4 span {
+  color: blue;
+}
+
+.entrada h5 {
+  color: grey;
+}
+
+.entrada p {
+
+}
+
+.entrada h6 {
+  text-indent: 20px;
+  background-image: url();
+  border-bottom: 1px solid grey;
+}
+
+.entrada ul {
+  height: 40px;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 12px;
+}
+
+.entrada ul li {
+  display: list-item;
+  list-style-image: url(icn/cor.png);
+  float: left;
+}
+
+.entrada input {
+  display: block;
+  clear: both;
 }
