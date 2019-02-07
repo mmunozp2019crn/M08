@@ -1,3 +1,5 @@
+@media only screen and (min-width: 960px) {
+
 body {
   margin: 0;
   padding: 0;
@@ -355,4 +357,289 @@ body {
 .entrada input {
   display: block;
   clear: both;
+}
+
+#MG {
+  list-style-type: none;
+}
+
+#CM {
+  list-style-type: none;
+}
+
+#CP {
+  list-style-type: none;
+}
+
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 959px) {
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    font-family: 'lucida grande', tahoma, Segoe UI, San Francisco, Roboto;
+  }
+
+  #barra {
+    visibility: hidden;
+  }
+
+  #contingut {
+
+  }
+
+  #contingut #cap {
+    background-image: url(img/vikings.jpg);
+    background-repeat: no-repeat;
+    height: 254px;
+    background-size: 100% auto;
+    text-align: center;
+    font-family: helvetica;
+   }
+
+  #contingut #cap img {
+    width: 162px;
+    height: 162px;
+    border-radius: 50%;
+    border: solid 4px white;
+    margin-top: 173px;
+  }
+
+  #contingut #cap h2 {
+    font-size: 28px;
+    font-weight: 200;
+  }
+
+  #contingut #menu {
+    visibility: hidden;
+  }
+
+  #menu li {
+
+  }
+
+  #ppal {
+    margin-top: 262px;
+  }
+
+  #seccions {
+
+  }
+
+  .esquerra {
+
+  }
+
+  .dreta {
+
+  }
+
+  .esquerra, .dreta {
+
+  }
+
+  #presentacio, #amistats, #fotos {
+
+  }
+
+  #seccions h3 {
+
+  }
+
+  #presentacio li {
+    list-style-type: none;
+    width: 60%;
+    font-size: 18px;
+    margin: 0 auto;
+  }
+
+  #presentacio h3 {
+
+  }
+
+  #presentacio p {
+
+  }
+
+  #presentacio .estudis {
+    list-style-image: url(icn/estudis.png);
+  }
+
+  .domicili {
+    list-style-image: url(icn/domicili.png);
+  }
+
+  .feina {
+    list-style-image: url(icn/feina.png);
+  }
+
+  .naixement {
+    list-style-image: url(icn/esdeveniments.png);
+  }
+
+  #surprise h3 {
+  }
+
+  #amistats h3 {
+  }
+
+  #amistats ul {
+  }
+
+  #amistats li {
+
+  }
+
+  #amistats ul {
+  }
+
+  #amistats a:link {
+
+  }
+
+  #amistats #SP {
+
+  }
+
+  #amistats #AG {
+
+  }
+
+  #amistats #SG {
+
+  }
+
+  #amistats #OL {
+
+  }
+
+  #amistats #YR {
+
+  }
+
+  #amistats #OP {
+
+  }
+
+  #amistats #SF {
+
+  }
+
+  #amistats #IP {
+
+  }
+
+  #amistats #VH {
+
+  }
+
+
+  #fotos h3 {
+
+  }
+
+  #fotos ul {
+
+  }
+
+  #fotos li {
+
+  }
+
+  #fotos .F1 {
+
+  }
+
+  #fotos .F2 {
+
+  }
+
+  #fotos .F3 {
+
+  }
+
+  #post1 li {
+
+  }
+
+  #post1 li:hover {
+  }
+
+  #post1 ul {
+
+  }
+
+  #pensament {
+
+  }
+
+  #estat_fotovideo {
+
+  }
+
+
+  #estat_etiquetar {
+
+  }
+
+  #estat_sentiment {
+
+  }
+
+  #botonera_estat li {
+  }
+
+  #botonera_estat li:hover{
+  }
+
+  .entrada {
+
+  }
+
+  .entrada h4 {
+  }
+
+  .entrada h4 span {
+  }
+
+  .entrada h5 {
+  }
+
+  .entrada p {
+
+  }
+
+  .entrada h6 {
+
+  }
+
+  .entrada ul {
+
+  }
+
+  .entrada ul li {
+
+  }
+
+  .entrada input {
+
+  }
+
+  #MG {
+  }
+
+  #CM {
+  }
+
+  #CP {
+  }
 }
