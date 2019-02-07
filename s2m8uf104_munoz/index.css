@@ -5,6 +5,7 @@ body {
   padding: 0;
   background-color: #e9eaed;
   font-family: 'lucida grande', tahoma, Segoe UI, San Francisco, Roboto;
+  overflow-x: hidden;
 }
 
 #barra {
