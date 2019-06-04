@@ -1,0 +1,113 @@
+body {
+  background: #333;
+  margin: 0 auto;
+  font-family: helvetica;
+}
+
+/*-------- Pantallas principal --------*/
+
+p {
+  font-size: 50px;
+  color: white;
+  line-height: 50px;
+  text-align: center;
+}
+
+button {
+  height: 50px;
+  width: 100px;
+  border-radius: 10px;
+  outline: 0;
+  border: none;
+  font-family: helvetica;
+  font-size: 15px;
+  display: block;
+  margin: 0 auto;
+}
+
+button:hover {
+  background: royalblue;
+}
+
+#inicio {
+  height: 500px;
+  width: 500px;
+  border-radius: 20px;
+  background-color: #111;
+  z-index: 3000;
+  margin: auto;
+  position: fixed;
+  top: 215px;
+  left: 650px;
+  right: 690px;
+}
+
+/*-------- Pantallas secundarias --------*/
+
+
+#buscador {
+  width: 170px;
+  border-radius: 50px;
+  outline: 0;
+  position: absolute;
+  right: 40px;
+  top: 13px;
+  padding-left: 30px;
+}
+
+
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+#contenedor {
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+}
+
+#songs {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.songs {
+  width: 300px;
+  height: 300px;
+  background: gray;
+  margin: 10px;
+  border: solid #111 5px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #111;
+}
+
+li {
+  display: inline-block;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: royalblue;
+  transition: ;
+}

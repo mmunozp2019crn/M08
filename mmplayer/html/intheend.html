@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Canciones</title>
+  <style>
+    body {
+      background: #333;
+      margin: 0 auto;
+      font-family: helvetica;
+    }
+
+    #buscador {
+      width: 170px;
+      border-radius: 50px;
+      outline: 0;
+      position: absolute;
+      right: 40px;
+      top: 13px;
+      padding-left: 30px;
+    }
+
+
+    #menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    #contenedor {
+      width: 1000px;
+      margin: auto;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    #foto {
+      width: 400px;
+      height: 400px;
+      background: gray;
+      margin: 50px auto;
+    }
+
+    #songs {
+      height: 250px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: scroll;
+      background-color: #333;
+    }
+
+    #songs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .songs {
+      height: 40px;
+      background: gray;
+      display: block;
+      font-size: 14pt;
+      line-height: 40px;
+      border-radius: 10px;
+      transition: 0.2s;
+      text-align: left;
+      padding-left: 40px;
+    }
+
+    .songs:hover {
+      background: royalblue;
+      color: white;
+    }
+
+    .songs ul li {
+      display: block;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #111;
+    }
+
+    li {
+      display: inline-block;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      color: royalblue;
+      transition: ;
+    }
+
+    a{
+     color: black;
+     text-decoration: none;
+    }
+    a:active{
+     color: black;
+     text-decoration: none;
+    }
+    a:hover{
+     color: black;
+     text-decoration: none;
+    }
+    a:visited{
+     color: black;
+     text-decoration: none;
+    }
+
+
+
+
+
+    /* 1---------- Controlador -------------*/
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      background:transparent;
+      position: relative;
+      margin:0;
+    }
+
+    input[type=range]:focus {
+      outline:none;
+    }
+
+  /* 1.1---------- Carril -------------*/
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 20px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+      cursor:pointer;
+    }
+
+  /* 1.2---------- Controlador -------------*/
+  input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 50%;
+  cursor:pointer;
+  z-index: 3;
+  }
+
+  input[type=range]::-webkit-slider-thumb:hover{
+  background-color: #56494E;
+  }
+
+  input[type=range]::-webkit-slider-thumb:active{
+  background-color: #5A5353;
+  }
+
+
+
+      .cover {
+        width: 500px;
+        height: 500px;
+        margin-left: 150px;
+        background: rgba(255,255,255, 0.3);
+        background: url(img/halsey.png);
+        background-repeat: no-repeat;
+      }
+
+      .info {
+        width: 500px;
+        height: 80px;
+          margin-left: 150px;
+          margin-top: 20px;
+        background: rgba(255,255,255, 0.3);
+      }
+      /* --------------- Tiradors ----------------- */
+
+      input[type=range] {
+        -webkit-appearance: none; /* Amaga el tirador per fer la màgia */
+        width: 100%; /* Firefox necessita una amplada específica */
+        background: transparent;  /* Amaga el tirador per fer la màgia */
+        background: rgba(255,255,255, 0.2);
+        margin: 0.0px 0;
+        border-radius: 10px;
+        margin: 20px auto;
+      }
+      input[type=range]:focus {
+        outline: none; /* Per no veure el contorn */
+      }
+
+      input[type=range]::-webkit-slider-runnable-track {
+
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        background: #4c4d4d;
+        border-radius: 10px;
+        border: 0px solid #010101;
+      }
+
+      /* Controlador */
+      input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 20px;
+        width: 20px;
+        border-radius: 10px;
+        background: rgba(255,255,255, 0.3);
+        cursor: pointer;
+  			position: relative;
+        margin-top: -0.0px;
+
+        box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+        border: 0px solid #ff1e00;
+      }
+
+      /*  opcional  */
+      /*
+      input[type=range]:focus::-webkit-slider-runnable-track {
+        background: red;
+        border-radius: 10px;
+      }
+      */
+
+
+      /* --------------- Botons ----------------- */
+
+      #playpause {
+        position:relative;
+        border:none;
+        text-decoration:none;
+        width: 50px;
+        height: 50px;
+        background: #4c4d4d;
+        border-radius: 50px;
+      }
+
+      #playpause:focus {
+        outline: none; /* Per no veure el contorn */
+      }
+      #playpause:before, #playpause:after, #playpause:focus:before, #playpause:focus:after {
+        position: absolute;
+        content: " ";
+        z-index: 1000;
+      }
+      #playpause:before, #playpause:after {
+        height: 25px;
+        width: 10px;
+        left: 25px;
+        top: 13px;
+        display: block;
+        background: white;
+      }
+
+      #playpause:after {
+       left: 12px;
+      }
+
+      #playpause:focus:before {
+        top: 15px;
+        left: 18px;
+        width: 0;
+        height: 0;
+        border-left: 17px solid white;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-top: 10px solid transparent;
+        display: block;
+        background: transparent;
+      }
+
+      #playpause:focus:after {
+       visibility:hidden;
+      }
+
+      .bck {
+  border-radius: none;
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  background-color: #4C4D4D;
+  border-radius: 50%;
+  position: relative;
+  left: 0px;
+  bottom: 10px;
+}
+
+.bck:focus{
+  outline:none;
+  position: relative;
+}
+
+.bck::before, .bck::after{
+  content: " ";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  border-left: solid white 10px;
+  border-right: solid transparent 5px;
+  border-bottom: solid transparent 5px;
+  top: 10px;
+  left: 15px;
+  height: 0px;
+  width: 0px;
+  background-color: transparent;
+  border-top: solid transparent 7px;
+  border-left: solid transparent 7px;
+  border-right: solid white 13px;
+  border-bottom: solid transparent 7px;
+  top: 7px;
+  left: -1px;
+}
+
+.fwd {
+  border-radius: none;
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  background-color: #4C4D4D;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  left: 0px;
+  bottom: 10px;
+}
+
+.fwd:focus{
+  outline:none;
+  position: relative;
+}
+
+.fwd::before, .fwd::after{
+  content: " ";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  border-left: solid white 20px;
+  border-right: solid transparent 10px;
+  border-bottom: solid transparent 10px;
+  top: 10px;
+  left: 35px;
+  height: 0px;
+  width: 0px;
+  background-color: transparent;
+  border-top: solid transparent 7px;
+  border-left: solid white 13px;
+  border-right: solid transparent 7px;
+  border-bottom: solid transparent 7px;
+  top: 7px;
+  left: 9px;
+}
+
+        #buscador {
+          width: 170px;
+          border-radius: 50px;
+          outline: 0;
+          position: absolute;
+          right: 40px;
+          top: 13px;
+          padding-left: 30px;
+          }
+
+    #reproductor {
+      position: fixed;
+      bottom: 0px;
+      right: 0px;
+      left: 0px;
+      width: 1000px;
+      margin: auto;
+    }
+
+    @media only screen and (max-width: 959px) {
+
+      body {
+        background: #333;
+        margin: 0 auto;
+        font-family: helvetica;
+      }
+
+      #buscador {
+        width: 170px;
+        border-radius: 50px;
+        outline: 0;
+        position: absolute;
+        right: 40px;
+        top: 13px;
+        padding-left: 30px;
+      }
+
+
+      #menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
+
+      #contenedor {
+        width: 375px;
+        margin: auto;
+        text-align: center;
+        padding-top: 50px;
+      }
+
+      #foto {
+        width: 250px;
+        height: 250px;
+        background: gray;
+      }
+
+      #songs {
+        height: 150px;
+        list-style-type: none;
+        margin: 0;
+        margin-right: 15px;
+        margin-left: 15px;
+        padding: 0;
+        overflow: scroll;
+        background-color: #333;
+      }
+
+      #songs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .songs {
+        height: 40px;
+        background: gray;
+        display: block;
+        font-size: 14pt;
+        line-height: 40px;
+        border-radius: 10px;
+        transition: 0.2s;
+        text-align: left;
+        padding-left: 40px;
+      }
+
+      .songs:hover {
+        background: royalblue;
+        color: white;
+      }
+
+      .songs ul li {
+        display: block;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #111;
+      }
+
+      li {
+        display: inline-block;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        color: royalblue;
+        transition: ;
+      }
+
+  a{
+   color: black;
+   text-decoration: none;
+  }
+  a:active{
+   color: black;
+   text-decoration: none;
+  }
+  a:hover{
+   color: black;
+   text-decoration: none;
+  }
+  a:visited{
+   color: black;
+   text-decoration: none;
+  }
+
+
+
+
+
+      /* 1---------- Controlador -------------*/
+      input[type=range] {
+        -webkit-appearance: none;
+        width: 100%;
+        background:transparent;
+        position: relative;
+        margin:0;
+      }
+
+      input[type=range]:focus {
+        outline:none;
+      }
+
+    /* 1.1---------- Carril -------------*/
+      input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 20px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 10px;
+        cursor:pointer;
+      }
+
+    /* 1.2---------- Controlador -------------*/
+    input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+    cursor:pointer;
+    z-index: 3;
+    }
+
+    input[type=range]::-webkit-slider-thumb:hover{
+    background-color: #56494E;
+    }
+
+    input[type=range]::-webkit-slider-thumb:active{
+    background-color: #5A5353;
+    }
+
+
+
+        .cover {
+          width: 500px;
+          height: 500px;
+          margin-left: 150px;
+          background: rgba(255,255,255, 0.3);
+          background: url(img/halsey.png);
+          background-repeat: no-repeat;
+        }
+
+        .info {
+          width: 500px;
+          height: 80px;
+            margin-left: 150px;
+            margin-top: 20px;
+          background: rgba(255,255,255, 0.3);
+        }
+        /* --------------- Tiradors ----------------- */
+
+        input[type=range] {
+          -webkit-appearance: none; /* Amaga el tirador per fer la màgia */
+          width: 100%; /* Firefox necessita una amplada específica */
+          background: transparent;  /* Amaga el tirador per fer la màgia */
+          background: rgba(255,255,255, 0.2);
+          margin: 0.0px 0;
+          border-radius: 10px;
+          margin: 20px auto;
+        }
+        input[type=range]:focus {
+          outline: none; /* Per no veure el contorn */
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          background: #4c4d4d;
+          border-radius: 10px;
+          border: 0px solid #010101;
+        }
+
+        /* Controlador */
+        input[type=range]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          height: 20px;
+          width: 20px;
+          border-radius: 10px;
+          background: rgba(255,255,255, 0.3);
+          cursor: pointer;
+          position: relative;
+          margin-top: -0.0px;
+
+          box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+          border: 0px solid #ff1e00;
+        }
+
+        /*  opcional  */
+        /*
+        input[type=range]:focus::-webkit-slider-runnable-track {
+          background: red;
+          border-radius: 10px;
+        }
+        */
+
+
+        /* --------------- Botons ----------------- */
+
+        #playpause {
+          position:relative;
+          border:none;
+          text-decoration:none;
+          width: 50px;
+          height: 50px;
+          background: #4c4d4d;
+          border-radius: 50px;
+        }
+
+        #playpause:focus {
+          outline: none; /* Per no veure el contorn */
+        }
+        #playpause:before, #playpause:after, #playpause:focus:before, #playpause:focus:after {
+          position: absolute;
+          content: " ";
+          z-index: 1000;
+        }
+        #playpause:before, #playpause:after {
+          height: 25px;
+          width: 10px;
+          left: 25px;
+          top: 13px;
+          display: block;
+          background: white;
+        }
+
+        #playpause:after {
+         left: 12px;
+        }
+
+        #playpause:focus:before {
+          top: 15px;
+          left: 18px;
+          width: 0;
+          height: 0;
+          border-left: 17px solid white;
+          border-right: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-top: 10px solid transparent;
+          display: block;
+          background: transparent;
+        }
+
+        #playpause:focus:after {
+         visibility:hidden;
+        }
+
+        .bck {
+    border-radius: none;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    background-color: #4C4D4D;
+    border-radius: 50%;
+    position: relative;
+    left: 0px;
+    bottom: 10px;
+  }
+
+  .bck:focus{
+    outline:none;
+    position: relative;
+  }
+
+  .bck::before, .bck::after{
+    content: " ";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    border-left: solid white 10px;
+    border-right: solid transparent 5px;
+    border-bottom: solid transparent 5px;
+    top: 10px;
+    left: 15px;
+    height: 0px;
+    width: 0px;
+    background-color: transparent;
+    border-top: solid transparent 7px;
+    border-left: solid transparent 7px;
+    border-right: solid white 13px;
+    border-bottom: solid transparent 7px;
+    top: 7px;
+    left: -1px;
+  }
+
+  .fwd {
+    border-radius: none;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    background-color: #4C4D4D;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    left: 0px;
+    bottom: 10px;
+  }
+
+  .fwd:focus{
+    outline:none;
+    position: relative;
+  }
+
+  .fwd::before, .fwd::after{
+    content: " ";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    border-left: solid white 20px;
+    border-right: solid transparent 10px;
+    border-bottom: solid transparent 10px;
+    top: 10px;
+    left: 35px;
+    height: 0px;
+    width: 0px;
+    background-color: transparent;
+    border-top: solid transparent 7px;
+    border-left: solid white 13px;
+    border-right: solid transparent 7px;
+    border-bottom: solid transparent 7px;
+    top: 7px;
+    left: 9px;
+  }
+
+          #buscador {
+            width: 80px;
+            border-radius: 50px;
+            outline: 0;
+            position: absolute;
+            right: 10px;
+            top: 13px;
+            padding-left: 10px;
+            }
+
+      #reproductor {
+        position: fixed;
+        bottom: 15px;
+        right: 0px;
+        left: 0px;
+        width: 375px;
+        margin: auto;
+      }
+
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav id="menu">
+    <ul>
+      <li><a class="active" href="MMPlayer.html">Inicio</a></li>
+      <li><a href="album.html">Álbums</a></li>
+      <li><a href="#news"  style="color: royalblue;">Canciones</a></li>
+      <input id="buscador" type="text" name="Buscar" placeholder="Buscar">
+      <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+    </ul>
+  </nav>
+
+  <div id="contenedor">
+
+    <img id="foto" src="../img/intheend.jpg">
+
+    </img>
+
+    <ul id="songs">
+      <a href="esencial.html"><li class="songs"><p>Esencial, Beret</p></li></a>
+      <a href="corazondepiedra.html"><li class="songs"><p>Corazón de Piedra, Beret</p></li></a>
+      <a href="tebote.html"><li class="songs"><p>Te boté, Remix</p></li></a>
+      <a href="faded.html"><li class="songs"><p>Faded. Alan Walker</p></li></a>
+      <a href="loseyourself.html"><li class="songs"><p>Lose yourself. Eminem</p></li></a>
+      <a href="SFDK.html"><li class="songs"><p>Todo lo que importa, SFDK</p></li></a>
+      <a href="livealighton.html"><li class="songs"><p>Leave a light on, Tom Walker</p></li></a>
+      <a href="numb.html"><li class="songs"><p>Numb, Linking Park</p></li></a>
+      <a href="intheend.html"><li class="songs"><p>In the end, Linking Park</p></li></a>
+    </ul>
+
+    <div id="reproductor">
+      <div id="carril">
+      </div>
+         <audio id="reproduint" width="500" height="40" src="../msc/intheend.mp3" type="audio/mp3"></audio>
+         <input id="barra" type="range" min="0" max="1000" value="0" step="1">
+         <div class="botons">
+           <a href="numb.html"><button class="bck"></button></a>
+           <button id="playpause"></button>
+           <a href="esencial.html"><button class="fwd"></button></a>
+         </div>
+    </div>
+
+  </div>
+
+  <script>
+
+    /*-- Para play pause cancion ----*/
+
+      var reproduint, playpause, barra;
+
+      var vesa, noutemps;
+
+      var songs = ["../msc/esencial.mp3","../msc/corazondepiedra.mp3","../msc/faded.mp3","../msc/intheend.mp3","../msc/leavealighton.mp3","../msc/loseyourself.mp3","../msc/numb.mp3","../msc/SFDK.mp3","../msc/tebote.mp3"];
+
+      var poster = ["../img/esencial.jpg","../img/corazondepiedra.jpg","../img/faded.jpg","../img/intheend.jpg","../img/leavealighton.jpg","../img/loseyourself.jpg",
+      "../img/numb.jpg","../img/SFDK.jpg","../img/tebote.jpg"];
+
+      var i=0;
+
+      function fwd(){
+        if (i==poster.length-1) {i=0;} else {i++;}
+        document.getElementById('foto').src="img/"+poster[i];
+      }
+
+
+
+
+
+
+     function inicialitzaReproductor() {
+       reproduint = document.getElementById("reproduint");
+       playpause = document.getElementById("playpause");
+       barra = document.getElementById("barra");
+
+       playpause.addEventListener("click", playPause, false);
+       barra.addEventListener("change", posicioAudio, false);
+       reproduint.addEventListener("timeupdate", actualitzaTemps, false);
+
+       playpause.focus();
+     }
+
+     window.onload = inicialitzaReproductor;
+
+     function playPause() {
+       if(reproduint.paused) {
+         reproduint.play();
+         playpause.blur();
+       }
+       else {
+         reproduint.pause();
+         playpause.focus();
+       }
+     }
+
+     function posicioAudio() {
+       var vesa = parseInt(reproduint.duration * (barra.value / 1000));
+       reproduint.currentTime = vesa;
+       console.log(reproduint.currentTime);
+     }
+
+     function actualitzaTemps() {
+       var noutemps = parseInt(reproduint.currentTime * (1000 / reproduint.duration));
+       barra.value = noutemps;
+       console.log(barra.value);
+     }
+
+
+
+  </script>
+
+
+
+
+</body>
+</html>
